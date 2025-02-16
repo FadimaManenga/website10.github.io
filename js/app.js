@@ -2167,9 +2167,11 @@ function toggleBgOff01() {
   for(let z=0;z<a.length;z++) {
     a[z].style.color = "white";
   }
+  
   for(let z=0;z<inputs.length;z++) {
     inputs[z].classList.add("brown");
   }
+  
   for(let z=0;z<textareas.length;z++) {
     textareas[z].classList.add("brown");
   }
@@ -2208,8 +2210,9 @@ function toggleBgOff01() {
 }
 function toggleBgOn01() {
   toggleBgOff.style.display = "block";
-  toggleBgOff.style.color = "";
-  toggleBgOff.style.color = "rgba(144,162,18,1) !important";
+  // toggleBgOff.style.color = "";
+  // toggleBgOff.style.color = "rgba(144,162,18,1) !important";
+  toggleBgOff.classList.add("green");
   // toggleBgOff.style.color = "initial";
   toggleBgOn.style.display = "none";
   html.style.cssText = "background-image:inherit,url:inherit;";
@@ -2261,12 +2264,14 @@ function toggleBgOn01() {
   }
   for(let z=0;z<inputs.length;z++) {
     inputs[z].classList.remove("brown");
+    inputs[z].classList.add("white");
   }
   for(let z=0;z<textareas.length;z++) {
     textareas[z].classList.remove("brown");
+    inputs[z].classList.add("white");
   }
   for(let z=0;z<ic.length;z++) {
-    ic[z].style.color = "rgb(0 0 0 / 55%)";
+    ic[z].classList.add("green");
     console.log("ic.length : "+ic.length);
   }
   for(let z=0;z<h2.length;z++) {
@@ -3221,6 +3226,14 @@ class Elt {
 }
 
 // -------------------------------------------------
+
+
+/*--------GIT----------- */
+// https://www.w3schools.com/git/default.asp
+// https://www.w3schools.com/git/exercise.asp?filename=exercise_new_files1
+// https://git-scm.com/
+
+/*--------------------- */
 
 // https://www.igensia-education.fr/mentions-legales
 
