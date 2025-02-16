@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+  
+<body>
+<table class="table" id="menuComponent"> 
+  <thead>
+    <tr id="mainHeader">
+      <th colspan="0" hidden><h3><a href="#homePage" class="nav-link" id="btnHome"><i class="fas fa-bars"></i>&nbsp;<i class="fas fa-home fa-1x"></i></a></h3></th>
+      <th colspan="1" id="thMenu">
+        <h3><a href="#" class="fas fa-bars fa-2x nav-link" id="btnMenu"></a></h3>
+        <ul id="nav">
+          <li><h3><a href="#homePage" class="nav-link" id="btnHome"><i class="fas fa-home fa-1x"></i>&nbsp;Home</a></h3></li>
+          <li><h3><a href="#shopPage" class="nav-link" id="btnShop"><i class="fas fa-store fa-1x"></i>&nbsp;Shop</a></h3></li> 
+          <li><h3><a href="#aboutPage" class="nav-link" id="btnAbout"><i class="fas fa-spinner fa-1x"></i>&nbsp;About us</a></h3></li>
+        </ul>
+      </th>
+      <th colspan="1" id="menuFocus"><h3><strong><a href="" class="nav-link" id="" data-btn="btnMenuFocus">Home</a></strong></h3></th>
+      <th colspan="1" id="thWish"><h3><a href="#wishPage" id="btnWish" class="nav-link fas fa-heart fa-2x"></a></h3></th>
+      <th colspan="1" id="thCart"><h3><a href="#cartPage" id="btnCart" class="nav-link fas fa-cart-plus fa-2x"></a></h3></th>
+      <th colspan="1" id='thConnect'><h3><a href="#connexionPage" class="nav-link fas fa-sign-in-alt fa-2x" id="btnConnect"></a></h3></th>
+      <th colspan="1" id='thSearch'>
+        <form id="formSearch" class="form-floating">
+          <input type="search" class="form-control" id="inputSearch" placeholder="Search...">
+          <label for="inputSearch"><i class="fas fa-search fa-1x" id="btnSearch"></i></label>
+          <button type="submit" class="btn btn-outline-light" hidden><i class="fas fa-search fa-1x" id="btnSearch" hidden="true"></i></button>
+        </form>
+        <ul id="turnBg">
+          <li><i type="button" id="toggleBgOff" class="fas fa-sun fa-1x nav-link"></i></li>
+          <li><i type="button" id="toggleBgOn" class="fas fa-moon fa-1x nav-link"></i></li>
+        </ul>
+      </th>
+      <th colspan="1" id='thTimes'><span class="today01"></span></th>
+    </tr> 
+    <tr id="userHeader">
+      <th colspan="1" id="thMenu">
+        <h3><a href="#" class="fas fa-bars fa-2x nav-link" id="btnMenu02"></a></h3>
+        <ul id="nav02">
+          <li><h3><a href="#shopPage" class="nav-link" id="btnShop02"><i class="fas fa-store fa-1x"></i>&nbsp;Shop</a></h3></li>
+          <li><h3><a href="#wishPage" id="btnWish02" class="nav-link"><i class="fas fa-heart fa-1x"></i>&nbsp;Wish</a></h3>
+          <li><h3><a href="#cartPage" id="btnCart02" class="nav-link"><i class="fas fa-cart-plus fa-1x"></i>&nbsp;Cart</a></h3></li> 
+        </ul>
+      </th>
+      <th colspan="1" id="menuFocus02"><h3><strong><a href="" class="nav-link" id="" data-btn="btnMenuFocus02">Admin</a></strong></h3></th>
+      <th colspan="2" id="thUser"><a href="#userPage" id="btnUser" class="nav-link"><i class="fas fa-user-check fa-1x" id="iconUser"></i></th>
+        <!-- <th colspan="1" id="thWish"><h3><a href="#wishPage" id="btnWish" class="nav-link"><i class="fas fa-heart fa-1x"></i>&nbsp;Wish</a></h3></th>
+          <th colspan="1" id="thCart"><h3><a href="#cartPage" id="btnCart" class="nav-link"><i class="fas fa-cart-plus fa-1x"></i>&nbsp;Cart</a></h3></th>
+          <th colspan="1" id="thShop"><h3><a href="#shopPage" class="nav-link" id="btnShop02"><i class="fas fa-store fa-1x"></i>&nbsp;Shop</a></h3></th> -->
+      <th colspan="1" id='thdisconnect'><h3><a type="button" href="#homePage" id="btnLogOut" class="nav-link fas fa-sign-out-alt fa-2x"></a></h3></th>
+      <th colspan="1" id='thSearch'>
+        <form id="formSearch02" class="form-floating">
+          <input type="search" class="form-control" id="inputSearch02" placeholder="Search..."/>
+          <label for="inputSearch02"><i class="fas fa-search fa-1x" id="btnSearch02"></i></label>
+          <button type="submit" class="btn btn-outline-light"><i class="fas fa-search fa-2x" id="btnSearch" hidden="true"></i></button>
+        </form>
+      </th>
+      <th colspan="1" id='thTimes'><span class="today02"></span></th>
+    </tr>
+  </thead>
+</table>
+<table class="table" id="bannerComponent">
+  <thead>
+    <tr>
+      <th colspan="7">
+        <div id="btnControllers01">
+          <button type="button" class="btn btn-outline-ligth" id="btnPrev"><i class="fas fa-chevron-left fa-3x" hidden></i></button>
+          <div><button type="button" class="btn btn-outline-ligth" id="btnStopInterval01"><i class="fas fa-pause fa-3x"></i></button>
+            <button type="button" class="btn btn-outline-ligth" id="btnStartInterval01"><i class="fas fa-play fa-3x"></i></button></div>
+          <button type="button" class="btn btn-outline-ligth" id="btnNext"><i class="fas fa-chevron-right fa-3x" id="btnNext" hidden></i></button>
+        </div>
+        <ul id="bannerThumb">
+          <!-- Js <li class="demo"></li> -->
+        </ul>  
+        <div id="blockBanner">
+          <div id="blockBanner01"> 
+            <div id="banner01"></div>
+            <div class="caption01">
+              <h1 id="bannerTitle01"></h1>
+            </div>
+          </div> 
+          <div id="blockBanner02"> 
+            <div id="banner02"></div>
+            <div class="caption02">
+              <h1 id="bannerTitle02"></h1>
+            </div>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+</table>
+<table class="table" id="homePage">
+  <tbody id="homePage">
+    <tr>
+      <!-- <td colspan="1" rowspan="2" id="homeImgLeft"></td> -->
+      <td colspan="1" rowspan="4"></td> 
+      <td colspan="2" rowspan="1">
+        <h2 class="eventTitle10"></h2>
+      </td>
+      <td colspan="2" rowspan="1">
+        <h2>Produit phare</h2>
+      </td>
+      <td colspan="1" rowspan="1" id="feateredCard">
+        <h2>Best-sellers</h2>
+      </td>
+      <td colspan="1" rowspan="4"></td> 
+      <!-- <td colspan="3" rowspan="2" id="homeImg02"></td> -->
+      <!-- <div id="eventContent"></div>-->
+    </tr>
+    <tr>
+      <td colspan="2" rowspan="1">
+        <div class="card eventCard">
+          <div class="selected02">
+            <!-- <div class="pseudo02"></div> -->
+            <!-- <img src="" alt="" class="selected02Img"> -->
+              <div id="btnControllers02">
+                <!-- <button type="button" class="btn btn-outline-ligth" id="btnPrev"><i class="fas fa-chevron-left fa-3x"></i></button> -->
+                <a type="button" class="btn btn-outline-ligth nav-link00" id="btnStopInterval"><i class="fas fa-pause fa-3x"></i></a>
+                <a type="button" class="btn btn-outline-ligth nav-link00" id="btnStartInterval"><i class="fas fa-play fa-3x"></i></a>
+                <!-- <button type="button" class="btn btn-outline-ligth" id="btnNext"><i class="fas fa-chevron-right fa-3x" id="btnNext"></i></button> -->
+              </div>
+          </div>
+          <div class="card-header">
+            <h4 class="eventDate10"></h4>
+            <h5 class="eventSubtitle10"></h5>
+          </div>
+          <div class="card-body event-body">
+            <p class="eventText10"></p>
+          </div>
+        </div>
+      </td>
+      <td colspan="2" rowspan="1">
+        <div class="feateredCard"> </div>
+      </td>
+      <td colspan="1" rowspan="1">
+        <div id="feateredUl"><!-- js img --></div>
+      </td>
+    </tr>
+    <tr>
+      <!-- <td colspan="1" rowspan="2" id="imag003"></td> -->
+      <td colspan="1" rowspan="1">
+        <h2>Agenda</h2>
+      </td>
+      <td colspan="4" rowspan="1">
+        <h2>A l'affiche...</h2>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <div class="container02">
+          <div class="calendar">
+            <div id="headerCalendar">
+              <a type="button" class="BtnLeftDate"><i class="fas fa-angle-left fa-3x"></i></a>
+              <div class="header-display">
+                <!--  <p class="displayMonth">
+                                              display month here 
+                                          </p> -->
+                <select id='monthSelect' class="form-select">
+                </select>&nbsp;
+                <select id="yearSelect" class="form-select"><!--createYear js--></select>
+              </div>
+              <a type="button" class="btnRightDate"><i class="fas fa-angle-right fa-3x"></i></a>
+            </div>
+            <div class="week">
+              <div>Dim</div>
+              <div>Lun</div>
+              <div>Mar</div>
+              <div>Mer</div>
+              <div>Jeu</div>
+              <div>Ven</div>
+              <div>Sam</div>
+            </div>
+            <div id="days02">
+              <!-- display days here -->
+            </div>
+          </div>
+          <div id="footer-calendar">
+          </div>
+        </div>
+      </td>
+      <td colspan="2" rowspan="1" id="imagEvent001"></td>
+      <td colspan="2" rowspan="1" id="imagEvent002"></td>
+  </td>
+  </tr>
+</tbody>
+</table>
+<table class="table" id="shopPage">
+  <!--  <thead>
+                            <tr id="shopBanner">
+                            <th colspan="7"><h1>Shopping with me...</h1></th>
+                            </tr>
+                        </thead> -->
+  <tbody id="shoppingList">
+    <tr>
+      <td colspan="7" id="shoppingCardsList">
+        <!-- shoppingList here -->
+      </td></tr>
+  </tbody>
+</table>
+<table class="table" id="aboutPage">
+  <!-- <thead>
+                            <tr id="aboutBanner">
+                            <th colspan="7"><h1>What's about us !</h1></th>
+                            </tr>
+                        </thead> 
+                        <tbody> -->
+  <tr>
+    <td colspan="2">
+      <div id="card-body">
+        <h2 class="card-title">Our activities</h2>
+      </div>
+    </td>
+    <td colspan="1" id="aboutImg02" rowspan="2"></td>
+    <td colspan="3">
+      <div id="card-body">
+        <h2 class="card-title">Our products</h2>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <div id="card-body">
+        <p>Non odio euismod lacinia at. Tristique et egestas quis ipsum. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Feugiat pretium nibh ipsum consequat. Sed id semper risus in hendrerit.</p>
+      </div>
+    </td> 
+    <td colspan="1">
+      <div id="card-body">
+        <iframe src="https://www.youtube.com/embed/99EVsBkvFGg?list=PL5dJ58wspnY_ThIafgx1udD0ahD6eJq7w" title="webside02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </td>     
+    <td colspan="3">
+      <div id="card-body">
+        <div class="selected01">
+          <h4>Where can I get some ?</h4>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+        </div>
+        </td>
+  </tr>
+  </tbody>
+</table>
+<table class="table" id="connexionPage">
+  <!-- <thead>
+                            <tr id="connexionBanner">
+                            <th colspan="7"><h1>Connect with me...</h1></th>
+                            </tr>
+                        </thead> -->
+  <tbody> 
+    <tr>
+      <td id="connectSpace" colspan="4">
+        <h2 id="connectTitle">Connexion</h2>
+        <h5 id="fieldConnect">Fill this form to connect to your space.</h5>
+        <form id="formConnect">
+          <div class="form-floating">
+            <input type="Email" id="inputEmailConnect" class="form-control" placeholder="Your email">
+            <label for="inputEmailConnect">Your email</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" id="inputPasswordConnect" class="form-control" placeholder="Your password">
+            <label for="inputEmailConnect">Your password</label>
+          </div>
+          <div id="btnGroupConnect" class="card-footer">
+            <button type="submit" class="btn btn-outline-success btn-lg"><i class="fas fa-user-lock fa-2x"></i></button> 
+            <!-- <button type="submit" class="btn btn-outline-success btn-lg">Connect</button> -->
+            <button type="reset" class="btn btn-outline-danger"><i class="fas fa-undo fa-2x"></i></button>
+          </div>
+        </form>
+      </td>
+      <td><span class="vertical-line"></span></td>
+      <td id="registerSpace" colspan="2">
+        <h2 id="registerTitle">Registration</h2>
+        <h5 id="fieldRegister">Fill this form to register.</h5>
+        <form id="formAddUser">
+          <div class="form-floating">
+            <input type="Email" id="inputEmail02" class="form-control" placeholder="Your email">
+            <label for="inputEmail02">Your email</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" id="inputPassword01" class="form-control" placeholder="Your password">
+            <label for="inputEmail02">Your password</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" id="inputPassword02" class="form-control" placeholder="Your password again">
+            <label for="inputEmail02">Your password again</label>
+          </div>
+          <div id="btnGroupConnect" class="card-footer">
+            <button type="submit" class="btn btn-outline-success btn-lg"><i class="fas fa-user-plus fa-2x"></i></button>
+            <button type="reset" class="btn btn-outline-danger"><i class="fas fa-undo fa-2x"></i></button>
+          </div>
+        </form>
+      </td>
+    </tr>
+  </tbody> 
+</table>
+<table class="table" id="userPage">
+  <tbody> 
+    <tr id="contactsListSection">
+      <td colspan="1" rowspan="2" id="bgImgUser"></td>
+      <td colspan="6">
+        <h3 id="registerTitle">Contacts Messages</h3>
+        <table class="table02" id="contactsListTable">
+          <thead>
+            <tr class="listheader">
+              <th colspan="1"><h5>Date</h5></th>
+              <th colspan="1" class="thFlex"><h5>Email</h5>&nbsp;<i class="fas fa-sort-alpha-down fa-2x nav-link" id="btnSortContactEmailDown"></i>&nbsp;<i class="fas fa-sort-alpha-down-alt fa-2x nav-link" id="btnSortContactEmailUp"></i></th>
+              <th colspan="2"><h5>Message</h5></th>
+              <th colspan="2"><h5>Action</h5></th>
+          </thead> 
+          <tbody id="contactsList">
+            <!-- js -->
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr id="usersListSection">
+      <td colspan="6">
+        <h3 id="registerTitle">Authentication - Users list</h3>
+        <table class="table02" id="usersListTable">
+          <thead>
+            <tr class="listheader">
+              <th colspan="1" class="thFlex"><h5>Email</h5>&nbsp;<i class="fas fa-sort-alpha-down fa-2x nav-link" id="btnSortUserEmailDown"></i>&nbsp;<i class="fas fa-sort-alpha-down-alt fa-2x nav-link" id="btnSortUserEmailUp"></i></th>
+              <th colspan="2"><h5>Password</h5></th>
+              <th colspan="3"><h5>Action</h5></th>
+          </thead> 
+          <tbody id="usersList">
+            <!-- js -->
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr id="productsListSection">
+      <td id="addProduct">
+        <h3 id="connectTitle">Add product</h3>
+        <form id="formAddProduct">
+          <div class="form-floating inputAddProductImg">
+            <input type="url" class="form-control" id="inputAddProductImg" placeholder="Enter url image file">
+            <label for="inputAddProductImg"><h6>Image url</h6></label>
+          </div>
+          <div class="form-floating inputAddProductTitle">
+            <input type="text" id="inputAddProductTitle" class="form-control" placeholder="Enter item title">
+            <label for="inputAddProductTitle"><h6>Title</h6></label>
+          </div>
+          <div class="form-floating inputAddProductSubtitle">
+            <input type="text" id="inputAddProductSubtitle" class="form-control" placeholder="Enter item subtitle">
+            <label for="inputAddProductSubtitle"><h6>Subtitle</h6></label>
+          </div>
+          <div class="form-floating inputAddProductPrice">	
+            <input type="number" step="any" id="inputAddProductPrice" class="form-control" placeholder="Item price">
+            <label for="inputAddProductPrice"><h6>Price</h6></label>	
+          </div>
+          <div class="form-floating inputAddProductText">
+            <textarea type="text" id="inputAddProductText" name="inputAddProductText" class="form-control" rows="5" cols="" minlength="10" maxlength="150" placeholder="Please put in a description" required></textarea>  
+            <label for="inputAddProductText"><h6>Description</h6></label>
+          </div>
+          <div id="btnGroupUserManag" class="card-footer">
+            <button type="submit" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus"></i></button>
+            <button type="reset" class="btn btn-outline-danger"><i class="fas fa-undo"></i></button>
+          </div>
+        </form>
+      </td>
+      <td colspan="6" id="listProducts">
+        <h3 id="registerTitle">Products list</h3>
+        <table class="table02" id="productsListTable">
+          <thead>
+            <tr class="listheader">
+              <th><h5>Image</h5></th>
+              <th class="thFlex title"><h5>Title</h5>&nbsp;<i class="fas fa-sort-alpha-down fa-2x nav-link" id="btnSortProductTitleDown"></i>&nbsp;<i class="fas fa-sort-alpha-down-alt fa-2x nav-link" id="btnSortProductTitleUp"></i></th>
+              <th><h5>Subtitle</h5></th>
+              <th><h5>Description</h5></th>
+              <th class="thFlex price"><h5>Price</h5>&nbsp;<i class="fas fa-sort-numeric-down fa-2x nav-link" id="btnSortProductPriceDown"></i>&nbsp;<i class="fas fa-sort-numeric-down-alt fa-2x nav-link" id="btnSortProductPriceUp"></i></th>
+              <th colspan="1"><h5>Action</h5></th>
+            </tr>
+          </thead>
+          <tbody id="productsList"> 
+            <!-- here listProducts -->
+          </tbody> 
+        </table>
+      </td>
+    </tr>
+    <tr id="eventsListSection">
+      <td id="addEvent">
+        <h3 id="connectTitle">Add Event</h3>
+        <form id="formAddEvent">
+          <input type="date" id="inputAddEventDate" class="form-control">
+          <div class="form-floating inputAddEventImg">
+            <input type="url" class="form-control" id="inputAddEventImg" placeholder="Enter url image file">
+            <label for="inputAddEventImg"><h6>Image url</h6></label>
+          </div>
+          <div class="form-floating inputAddEventTitle">
+            <input type="text" id="inputAddEventTitle" class="form-control" placeholder="">
+            <label for="inputAddEventTitle"><h6>Title</h6></label>
+          </div>
+          <div class="form-floating inputAddEventSubtitle">
+            <input type="text" id="inputAddEventSubtitle" class="form-control" placeholder="">
+            <label for="inputAddEventSubtitle"><h6>Subtitle</h6></label>
+          </div>
+          <div class="form-floating textereaAddEventText">
+            <textarea type="text" id="inputAddEventText" name="inputAddEventText" class="form-control" rows="5" cols="" minlength="10" maxlength="150" placeholder="Please put in a description" required></textarea>          
+            <label for="inputAddEventText"><h6>Description</h6></label>
+          </div>
+          <div id="btnGroupUserManag" class="card-footer">
+            <button type="submit" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus"></i></button>
+            <button type="reset" class="btn btn-outline-danger"><i class="fas fa-undo"></i></button>
+          </div>
+        </form>
+      </td>
+      <td colspan="6">
+        <h3 id="registerTitle">Events calendar</h3>
+        <table class="table02" id="eventsListTable">
+          <thead>
+            <tr class="listheader">
+              <th><h5>Image</h5></th>
+              <th class="thFlex eventDate" colspan="1"><h5>Dates</h5>&nbsp;<i class="fas fa-sort-alpha-down fa-2x nav-link" id="btnSortEventDateDown"></i>&nbsp;<i class="fas fa-sort-alpha-down-alt fa-2x nav-link" id="btnSortEventDateUp"></i></th>
+              <th colspan="1"><div class="thFlex eventTitle"><h5>Titles</h5>&nbsp;<i class="fas fa-sort-numeric-down fa-2x nav-link" id="btnSortEventTitleDown"></i>&nbsp;<i class="fas fa-sort-numeric-down-alt fa-2x nav-link" id="btnSortEventTitleUp"></i><div></th>
+                <th colspan="1"><h5>Subtitle</h5></th>
+                <th colspan="1"><h5>Description</h5></th>
+                <th colspan="2"><h5>Action</h5></th>
+                </tr>
+          </thead>
+          <tbody id="eventsList"> 
+            <!-- js eventsList -->
+          </tbody> 
+        </table>
+      </td>
+    </tr>
+  </tbody> 
+</table> 
+<table class="table" id="searchPage">
+  <thead>
+    <tr id="searchBanner">
+      <th colspan="7"><h1>Found out words...</h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="result01">
+        <h4>Search</h4>
+        <p id="resultSearch"></p>
+      </td>
+      <td><span class="vertical-line"></span></td>
+      <td colspan="3" class="result01">
+        <h4>Search result</h4>
+        <p id="resultSearch02"></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table class="table" id="contactPage">
+  <!-- <thead>
+                        <tr id="contactBanner">
+                        <th colspan="7"><h1>Contact us...</h1></th>
+                        </tr>
+                    </thead> -->
+  <tbody>
+    <tr>
+      <td id="connectSpace" colspan="3">
+        <h2 id="connectTitle">Put on a message...</h2>
+        <form id="formAddContact" action="">
+          <div class="form-floating inputContactEmail">
+            <input type="Email" id="inputContactEmail" class="form-control" placeholder="Enter your email">
+            <label for="inputContactEmail">Enter your email</label>
+          </div>
+          <div class="form-floating textareaContact">
+            <textarea id="textareaContact" row="10" maxlength="150" name="" class="form-control" placeholder="Enter your message please"></textarea>
+            <label for="textareaContact">Enter maxi 75 characters</label>
+          </div>
+          <div id="btnGroupConnect" class="card-footer" name="">
+            <button type="submit" class="btn btn-outline-success btn-lg"><i class="fas fa-check fa-2x"></i></button>
+            <button type="reset" class="btn btn-outline-danger"><i class="fas fa-undo fa-2x"></i></button>
+          </div>
+        </form>
+      </td>
+      <td><span class="vertical-line"></span></td>
+      <td id="registerSpace" colspan="3">
+        <div class="connexion01">
+          <h2 id="registerTitle">Google map</h2>
+          <div id="map02"></div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table class="table" id="conditionsPage">
+  <!-- <thead>
+                        <tr id="conditionsBanner">
+                        <th colspan="7"><h1>Terms and conditions</h1></th>
+                        </tr>
+                    </thead> -->
+  <tbody>
+    <tr id="contentConditionsTitle">
+      <td id="termsSpace" colspan="3"><h2 id="conditions01Title">Terms</h2></td>
+      <td rowspan="2"><span class="vertical-line"></span></td>
+      <td id="conditionsSpace" colspan="3">
+        <div class="conditions01">
+          <h2 id="conditions02Title">Conditions</h2>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci dapibus ultrices in iaculis nunc sed augue. Dolor sit amet consectetur adipiscing elit. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant.</p></td>
+      <td class="divImgConditions" id="imgConditions01"></td>
+      <td><p>De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes)...</p></td>
+      <td><p>Vitae aliquet nec ullamcorper sit amet risus nullam eget. Consectetur adipiscing elit ut aliquam. Feugiat pretium nibh ipsum consequat. Quisque sagittis purus sit amet. Ultricies tristique nulla aliquet enim tortor. Tellus integer feugiat scelerisque varius morbi. Quis auctor elit sed vulputate mi. Id semper risus in hendrerit gravida. Dictum varius duis at consectetur lorem donec massa sapien. Id aliquet risus feugiat in ante metus dictum.</p></td>
+      <td class="divImgConditions" id="imgConditions02"></td>
+      <td><p>De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes)...</p></td>
+    </tr>
+  </tbody></table>
+<table class="table" id="rgpdPage">
+  <!-- <thead>
+                        <tr id="rgpdBanner">
+                        <th colspan="7"><h1>RGPD</h1></th>
+                        </tr>
+                    </thead> -->
+  <tbody>
+    <tr>
+      <td id="imgRgpd01" colspan="1"></td>
+      <td><p>xxxxxPlusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d'entre elles a été altérée par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard.</p></td>
+      <td id="imgRgpd02" colspan="1"></td>
+      <td><p>In hac habitasse platea dictumst quisque sagittis purus. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Mais la majeure partie d'entre elles a été altérée par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard.</p></td>
+      <td id="imgRgpd01" colspan="1"></td>
+      <td><p>bbbbbPlusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d'entre elles a été altérée par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard.In hac habitasse platea dictumst quisque sagittis purus.</p></td>
+      <td id="imgRgpd02" colspan="1"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="table" id="copyrightPage">
+  <thead>
+    <!-- <tr id="rightBanner">
+                        <th colspan="7"><h1>Copyright</h1></th>
+                        </tr>
+                    </thead> -->
+  <tbody>
+    <tr>
+      <td><p>vvvvvvPlusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d'entre elles a été altérée par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard.In hac habitasse platea dictumst quisque sagittis purus. Eleifend mi in nulla posuere sollicitudin aliquam ultrices.</p></td>
+      <td><p>xxxxxxAc turpis egestas maecenas pharetra convallis posuere morbi leo urna. Hendrerit gravida rutrum quisque non tellus orci ac auctor. Ut sem viverra aliquet eget sit amet tellus cras.</p></td> 
+      <td id="imgRight02"></td>
+      <td><p>xxxxxxAc turpis egestas maecenas pharetra convallis posuere morbi leo urna. Hendrerit gravida rutrum quisque non tellus orci ac auctor. Ut sem viverra aliquet eget sit amet tellus cras.</p></td>
+      <td id="imgRight03"></td>
+      <td><p>Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna. Hendrerit gravida rutrum quisque non tellus orci ac auctor. Ut sem viverra aliquet eget sit amet tellus cras.</p></td>
+      <td id="imgRight01"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="table" id="cartPage">
+  <thead>
+    <!-- <tr id="cartBanner">
+                        <th colspan="7"><h1>Check your cart</h1></th>
+                        </tr> -->
+    <tr class="cart-heard">
+      <th colspan="2"><h4>Description</h4></th>
+      <th><h4>Quantité</h4></th>
+      <th><h4>P.U. TTC</h4></th>
+      <th><h4>Montant</h4></th>
+      <th colspan="2"><h4>Action</h4></th>
+    </tr>
+  </thead>
+  <tbody id="cartsList">
+    <!-- listCart -->
+  </tbody>
+  <tfoot>
+    <tr class="cart00-footer">
+      <td colspan="4"><h4>Total panier...</h4></td>
+      <td colspan="1" id="cartTotal"></td>
+      <td colspan="2"></td>
+    </tr>
+  </tfoot>
+</table>
+<table class="table" id="wishPage">
+  <thead>
+    <!-- <tr id="wishBanner">
+                        <th colspan="7"><h1>My favorite items</h1></th>
+                        </tr> -->
+    <tr class="cart-heard">
+      <th colspan="2"><h4>Description</h4></th>
+      <th><h4>P.U. TTC</h4></th>
+      <th colspan="3"><h4>Action</h4></th>
+    </tr>
+  </thead>
+  <tbody id="wishList">
+    <!-- listWish -->
+  </tbody>
+</table>
+<table class="table" id="search02Page">
+  <thead>
+    <tr id="searchBanner">
+      <th colspan="7"><h1>Found out words...</h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="result01" colspan="3">
+        <h4>Search</h4>
+        <p id="result02Search"></p>
+      </td>
+      <td colspan="2"><span class="vertical-line"></span></td>
+      <td class="result01" colspan="3">
+        <h4>Search result</h4>
+        <p id="result02Search02"></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table class="table" id="footerComponent">
+  <tfoot>
+    <tr id="footer">
+      <td class="footer01" colspan="2">
+        <ul>
+          <li><h3>Company</h3></li>
+          <li><a href="#homePage" class="nav-link" id="btnHome"><i class="fas fa-home fa-1x" aria-hidden="true"></i>&nbspHome</a></li>
+          <li><a href="#aboutPage" class="nav-link" id="btnAbout"><i class="fas fa-spinner fa-1x"></i>&nbspAbout us</a></li>
+          <li><a href="#contactPage" class="nav-link" id="btnContact"><i class="fas fa-envelope-open"></i>&nbsp;Contact</a></li>
+          <li>
+            <form id="newsLetter">
+              <div class="form-floating">
+                <input type="email" id="inputNews" class="form-control" placeholder="enter your email">
+                <label for="inputNews" class="form-label"><i class="far fa-newspaper"></i>&nbsp;Newsletter</label>
+              </div>
+              <button type="submit" class="btn btn-outline-success btn-lg" hidden></button>
+            </form>
+          </li>
+        </ul>
+      </td>
+      <td class="footer01" colspan="2">
+        <ul>
+          <li><h3>Services</h3></li>
+          <li><a href="#shopPage" class="nav-link" id="btnShop"><i class="fas fa-store fa-1x" aria-hidden="true"></i>&nbsp;Shopping</a></li>
+          <li><a href="homePage" class="nav-link" id="btnHome"><i class="fas fa-calendar-alt"></i>&nbsp;Events</a></li>
+          <li><a href="userPage" class="nav-link" id="btnConnect"><i class="fas fa-user fa-1x" aria-hidden="true"></i>&nbsp;Connexion</a></li>
+          <li><a href="#contactPage" class="nav-link" id="btnContact"><i class="fas fa-comments"></i>&nbsp;PAQ</a></li>
+        </ul>
+      </td>
+      <td class="footer01" colspan="3">
+        <ul>
+          <li><h3>Terms & conditions</h3></li>
+          <li><a href="#copyrightPage" class="nav-link" id="btnCopyright"><i class="fas fa-file-contract"></i>&nbsp;Legal notices</a></li>
+          <li><a href="#conditionsPage" class="nav-link" id="btnConditions"><i class="fas fa-balance-scale-right"></i>&nbsp;CGV</a></li>
+          <li><a href="#rgpdPage" class="nav-link" id="btnRgpd"><i class="fas fa-gavel"></i>&nbspRGPD</a></li>
+        </ul>
+      </td>
+      <td class="footer01" colspan="1">
+        <ul>
+          <li><h3>Follow us</h3></li>
+          <ul id="socialMediasList">
+            <li><a href="#" class="fa fa-globe" aria-hidden="true"></a></li>
+            <li><a href="#" class="fab fa-facebook-f"></a></li>
+            <li><a href="#" class="fab fa-instagram-square"></a></li>
+            <li><a href="#" class="fab fa-linkedin-in"></a></li>
+            <li><a href="#" class="fas fa-times fa-2x"></a></li>
+          </ul>
+        </ul>
+      </td>
+    </tr>
+    <tr id="footer02">
+      <td colspan="7">
+        <ul>
+          <li>
+            <h5>
+              Copyright&nbsp;<i class="fas fa-copyright "></i>
+              &nbsp;<span>2024 - eDesign31 All rights reserved</span>
+            </h5>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+<table class="table" id="alertTable">
+  <tr id="alertMsg">
+    <td colspan="7">
+      <span id="alertSuccess" class="alert alert-success fade-in" role="alert"></span>
+      <span id="alertError" class="alert alert-danger fade-in" role="alert"></span>
+    </td>
+  </tr>
+</table>
+
+<dialog id="dialogReadContact"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="contactTitleModal">Read Contact</h3>
+    </div>
+    <div class="modal-body">
+      <form id="formReadContact" method="dialog">
+        <div class="form-floating inputContactId">
+          <input type="text" class="form-control" id="inputContactId" disabled>
+          <label for="inputContactId" class="labelContact">contactId</label>
+        </div>
+        <div class="form-floating inputContactDate">
+          <input type="text" class="form-control" id="inputContactDate" readonly>
+          <label for="inputContactDate" class="labelContact">Contact Date</label>
+        </div>
+        <div class="form-floating inputContactEmail">
+          <input type="email" class="form-control" id="inputContactEmail" readonly>
+          <label for="inputContactEmail" class="labelContact">Contact email</label>
+        </div>
+        <div class="form-floating textareaContactMessage">
+          <textarea id="messageContact" row="80" name="" class="form-control" readonly></textarea>
+          <label for="messageContact" class="labelContact">Contact message</label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer btnDialogGroup">
+      <button type="button" class="btn nav-link" id="btnCloseModalReadContact">Close</button> 
+    </div>
+  </div>
+</dialog> 
+<dialog id="dialogUpdateContact"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="contactTitleModal02">Update Contact</h3>
+    </div>
+    <div class="modal-body">
+      <form id="formUpdateContact" method="dialog">
+        <div class="form-floating inputContactId02">
+          <input type="type" class="form-control" id="inputContactId02" disabled>
+          <label for="inputContactId02" class="labelContact">contactId</label>
+        </div>
+        <div class="form-floating inputContactDate02">
+          <input type="text" class="form-control" id="inputContactDate02" readonly>
+          <label for="inputContactDate02" class="labelContact">Contact Date</label>
+        </div>
+        <div class="form-floating inputContactEmail02">
+          <input type="email" class="form-control" id="inputContactEmail02">
+          <label for="inputContactEmail02" class="labelContact">Contact email</label>
+        </div>
+        <div class="form-floating textareaContactMessage">
+          <textarea id="messageContact02" row="40" cols="1" name="" class="form-control"></textarea>
+          <label for="messageContact02" class="labelContact">Contact message</label>
+        </div> 
+        <div class="card-footer btnDialogGroup">
+          <button type="submit" class="btn">Update</button>
+          <button type="reset" class="btn"><i class="fas fa-undo "></i></button>
+          <button type="button" class="btn nav-link" id="btnCloseModalUpdateContact">Close</button> 
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog> 
+<dialog id="dialogReadUser"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="userTitleModal">Read User</h3>
+    </div>
+    <div class="modal-body">
+      <form id="formReadUser" method="dialog">
+        <div class="form-floating inputUserId">
+          <input type="text" class="form-control" id="inputUserId" disabled>
+          <label for="inputUserId" class="labelUser">userId</label>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control" id="inputReadUserEmail" readonly>
+          <label for="inputReadUserEmail" class="labelUser">Email</label>
+        </div>
+        <div class="form-floating">
+          <input type="text" id="inputReadUserPassword" class="form-control" readonly>
+          <label for="inputReadUserPassword" class="labelUser">Password</label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer btnDialogGroup">
+      <button type="button" class="btn nav-link" id="btnCloseModalReadUser">Close</button> 
+    </div>
+  </div>
+</dialog> 
+<dialog id="dialogUpdateUser"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="userTitleModal02">Update User</h3>
+    </div>
+    <div class="modal-body">
+      <form id="formUpdateUser" method="dialog">
+        <div class="form-floating inputUserId">
+          <input type="email" class="form-control" id="inputUserId02" disabled>
+          <label for="inputUserId02" class="labelUser">userId</label>
+        </div>
+        <div class="form-floating inputUpdateUserEmail">
+          <input type="email" class="form-control" id="inputUpdateUserEmail">
+          <label for="inputUpdateUserEmail" class="labelUser02">Email</label>
+        </div>
+        <div class="form-floating inputUpdateUserPassword">
+          <input type="text" id="inputUpdateUserPassword" class="form-control">
+          <label for="inputUpdateUserPassword" class="labelUser">Password</label>
+        </div>
+        <div class="card-footer btnDialogGroup">
+          <button type="submit" class="btn">Update</button>
+          <button type="reset" class="btn"><i class="fas fa-undo "></i></button>
+          <button type="button" class="btn nav-link" id="btnCloseModalUpdateUser">Close</button> 
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog>
+<dialog id="dialogReadProduct"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="productTitleModal">Read Product</h3>
+    </div>
+    <div class="modal-body">
+      <form id="formReadProduct">
+        <div class="form-floating inputReadProductImg">
+          <img src="" alt="" id="inputReadProductImg">
+        </div>
+        <div class="form-floating inputProductId">
+          <input type="text" class="form-control" id="inputProductId" disabled>
+          <label for="inputProductId" class="labelUser">productId</label>
+        </div>
+        <div class="form-floating inputReadProductImgUrl" hidden>
+          <input type="url" class="form-control" id="inputReadProductImgUrl">
+          <label for="inputReadProductImgUrl"><h6>Image url</h6></label>
+        </div>
+        <div class="form-floating inputReadProductTitle">
+          <input type="text" id="inputReadProductTitle" class="form-control" readonly>
+          <label for="inputReadProductTitle"><h6>Title</h6></label>
+        </div>
+        <div class="form-floating inputReadProductSubtitle">
+          <input type="text" id="inputReadProductSubtitle" class="form-control" readonly>
+          <label for="inputReadProductSubtitle"><h6>Subtitle</h6></label>
+        </div>
+        <div class="form-floating inputReadProductPrice">	
+          <input id="inputReadProductPrice" class="form-control" readonly>
+          <label for="inputReadProductPrice"><h6>Price</h6></label>	
+        </div>
+        <div class="form-floating textareaReadProductText">
+          <textarea type="text" id="inputReadProductText" name="inputReadProductText" class="form-control" rows="5" cols="" minlength="10" maxlength="150" readonly></textarea>
+          <label for="inputReadProductText"><h6>Description</h6></label>
+        </div>
+        <div class="isCompleted inputReadProductIsFeatered">
+          <p>isFeatered</p>
+          <div class="form-check">
+            <input type="radio" id="inputReadProductIsFeatered" class="form-check-input" value="false" name="a" disabled>
+            <label for="inputReadProductIsFeatered" class="form-check-label">false</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="inputReadProductIsFeatered02" class="form-check-input" value="true" name="a" disabled>
+            <label for="inputReadProductIsFeatered0" class="form-check-label">true</label>
+          </div>
+        </div> 
+      </form>
+    </div>
+    <div class="modal-footer btnDialogGroup">
+      <button type="button" class="btn nav-link" id="btnCloseModalReadProduct">Close</button> 
+    </div>
+  </div>
+</dialog> 
+<dialog id="dialogUpdateProduct"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="productTitleModal02">Update Product</h3>
+    </div>
+    <div class="modal-body">
+      <form id="formUpdateProduct" method="dialog">
+        <div class="form-floating inputUpdateProductImg">
+          <img src="" alt="" id="inputUpdateProductImg">
+        </div>
+        <div class="form-floating inputProductId02">
+          <input type="text" class="form-control" id="inputProductId02" disabled>
+          <label for="inputProductId02" class="labelProduct">productId</label>
+        </div>
+        <div class="form-floating inputUpdateProductImgUrl">
+          <input type="url" class="form-control" id="inputUpdateProductImgUrl">
+          <label for="inputUpdateProductImgUrl"><h6>Image url</h6></label>
+        </div>
+        <div class="form-floating inputUpdateProductTitle">
+          <input type="text" id="inputUpdateProductTitle" class="form-control">
+          <label for="inputUpdateProductTitle"><h6>Title</h6></label>
+        </div>
+        <div class="form-floating inputUpdateProductSubtitle">
+          <input type="text" id="inputUpdateProductSubtitle" class="form-control">
+          <label for="inputUpdateProductSubtitle"><h6>Subtitle</h6></label>
+        </div>
+        <div class="form-floating inputUpdateProductPrice">	
+          <input type="number" step="any" id="inputUpdateProductPrice" class="form-control">
+          <label for="inputUpdateProductPrice"><h6>Price</h6></label>	
+        </div>
+        <div class="form-floating textareaUpdateProductText">
+          <textarea type="text" id="inputUpdateProductText" name="inputUpdateProductText" class="form-control" rows="5" cols="" minlength="10" maxlength="150" required></textarea>  
+          <label for="inputUpdateProductText"><h6>Description</h6></label>
+        </div>
+        <div class="isCompleted inputUpdateProductIsFeatered">
+          <p>isFeatered</p>
+          <div>
+            <input type="radio" id="inputUpdateProductIsFeatered" class="form-check-input" value="false" name="b">
+            <label for="inputUpdateProductIsFeatered" class="form-check-label">false</label>
+          </div>
+          <div>
+            <input type="radio" id="inputUpdateProductIsFeatered02" class="form-check-input" value="true" name="b">
+            <label for="inputUpdateProductIsFeatered02" class="form-check-label">true</label>
+          </div>
+        </div>
+        <div class="card-footer btnDialogGroup">
+          <button type="submit" class="btn">Update</button>
+          <button type="reset" class="btn"><i class="fas fa-undo "></i></button>
+          <button type="button" class="btn nav-link" id="btnCloseModalUpdateProduct">Close</button> 
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog>
+<dialog id="dialogReadEvent"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="eventTitleModal">Read Event</h3>
+    </div>
+    <div class="modal-body">
+      <form id="formReadEvent" method="dialog">
+        <div class="form-floating inputReadEventImg">
+          <img src="" alt="" id="inputReadEventImg">
+        </div>
+        <div class="form-floating inputEventId">
+          <input type="email" class="form-control" id="inputEventId" disabled>
+          <label for="inputEventId" class="labelUser">eventId</label>
+        </div>
+        <div class="form-floating inputReadEventImgUrl" hidden>
+          <input type="url" class="form-control" id="inputReadEventImgUrl">
+          <label for="inputReadEventImgUrl"><h6>Image url</h6></label>
+        </div>
+        <div class="form-floating inputReadEventDate">
+          <input type="date" class="form-control" id="inputReadEventDate">
+          <label for="inputReadEventDate" class="labelUser02">Date</label>
+        </div>
+        <div class="form-floating inputReadventTitle">
+          <input type="text" id="inputReadventTitle" class="form-control">
+          <label for="inputReadventTitle" class="labelUser">Title</label>
+        </div>
+        <div class="form-floating inputReadEventSubtitle">
+          <input type="text" id="inputReadEventSubtitle" class="form-control">
+          <label for="inputReadEventSubtitle" class="labelUser">Subtitle</label>
+        </div>
+        <div class="form-floating textereaReadEventText">
+          <textarea type="text" id="textereaReadEventText" name="textereaReadEventText" class="form-control" rows="20" cols="" minlength="10" maxlength="350" required></textarea>          
+          <label for="inputUpdateEventText" class="labelUser">Description</label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer btnDialogGroup">
+      <button type="button" class="btn nav-link" id="btnCloseModalReadEvent">Close</button> 
+    </div>
+  </div>
+</dialog> 
+<dialog id="dialogUpdateEvent"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="eventTitleModal02">Update Event</h3>
+    </div>
+    <div class="modal-body">
+      <form id="formUpdateEvent" method="dialog">
+        <div class="form-floating imgUpdateEvent">
+          <img src="" alt="" id="inputUpdateEventImg">
+        </div>
+        <div class="form-floating inputEventId02">
+          <input type="email" class="form-control" id="inputEventId02" disabled>
+          <label for="inputEventId02" class="labelUser">eventId</label>
+        </div>
+        <div class="form-floating inputUpdateEventImgUrl">
+          <input type="url" class="form-control" id="inputUpdateEventImgUrl">
+          <label for="inputUpdateEventImgUrl"><h6>Image url</h6></label>
+        </div>
+        <div class="form-floating inputUpdateEventDate">
+          <input type="date" class="form-control" id="inputUpdateEventDate">
+          <label for="inputUpdateEventDate" class="labelUser02">Date</label>
+        </div>
+        <div class="form-floating inputUpdateEventTitle">
+          <input type="text" id="inputUpdateEventTitle" class="form-control">
+          <label for="inputUpdateEventTitle" class="labelUser">Title</label>
+        </div>
+        <div class="form-floating inputUpdateEventSubtitle">
+          <input type="text" id="inputUpdateEventSubtitle" class="form-control">
+          <label for="inputUpdateEventSubtitle" class="labelUser">Subtitle</label>
+        </div>
+        <div class="form-floating textereaUpdateEventText">
+          <textarea type="text" id="inputUpdateEventText" name="inputUpdateEventText" class="form-control" rows="20" cols="" minlength="10" maxlength="350" required></textarea>          
+          <label for="inputUpdateEventText" class="labelUser">Description</label>
+        </div>
+        <div class="card-footer btnDialogGroup">
+          <button type="submit" class="btn">Update</button>
+          <button type="reset" class="btn"><i class="fas fa-undo "></i></button>
+          <button type="button" class="btn nav-link" id="btnCloseModalUpdateEvent">Close</button> 
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<script src="https://kit.fontawesome.com/653c43447a.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ <script type="module" src="js/app.js"></script>  
+ 
+</body>
+</html>
+
+
+
