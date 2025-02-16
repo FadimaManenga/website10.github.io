@@ -6,11 +6,14 @@
   --accent: #0041ff;
   --accent-2: #ebedf0;
 }
+.white {
+  color: rgb(255 255 255) !important;
+}
 .red {
   color:red !important;
 }
 .green {
-  color:green !important;
+  color: rgba(144, 162, 18, 1) !important;
 }
 .brown {
   color:rgb(0 0 0 / 55%) !important;
@@ -698,7 +701,7 @@ td button, td a {
 .event-body {
   display: block !important;
 }
-.card-header:not(#homePage .card .card-header, #shoppingList .card-header){
+.card-header:not(#homePage .card .card-header, #shoppingList .card-header,.eventCard .card-header){
   display:flex;
   justify-content: space-between;
   width: 100%;
